@@ -1,6 +1,3 @@
-![image](https://github.com/TaysonMartinss/projeto-individual-dark-souls/assets/160864748/c0dd167c-9af5-4896-9477-30fbadbcff5c)
-
-
 
 Projeto individual feito para universidade SPTECH que tem como proposito avaliar habilidades ensinadas atraves do primeiro semestre do curso ADS.
 
