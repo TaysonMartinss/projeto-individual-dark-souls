@@ -9,4 +9,5 @@ conteudo:
 
 enjoy and praise the sum
 
-![image](https://github.com/TaysonMartinss/projeto-individual-dark-souls/assets/160864748/bfc3b6c9-58e2-4800-993c-0c156748f1b9)
+![image](https://github.com/TaysonMartinss/projeto-individual-dark-souls/assets/160864748/419bc119-7101-450d-bf3f-b9e73242f2ff)
+
