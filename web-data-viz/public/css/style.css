@@ -1,0 +1,594 @@
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit; /* Mantém a cor padrão do texto */
+}
+
+
+
+
+
+.header{
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+.container .header {
+    display: flex;
+    justify-content: center;
+
+
+}
+.container{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+    width: 100%;
+    height: 90px;
+}
+
+.container .logo{
+    padding-left: 40px;
+}
+
+.logo img {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    width: 259px;
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* Aumenta em 10% quando o mouse passa sobre ele */
+}
+
+.navbar{
+    font-family: 'Metropolis', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 19px;
+    color: #f5f5f5;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    padding-right: 78px;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Posição inicial da linha (fora da visualização) */
+    width: 0; /* Largura inicial (linha não visível) */
+    height: 2px; /* Altura da linha */
+    background-color: #fafafa; /* Cor da linha */
+    transition: width 0.3s ease; /* Adiciona uma transição suave para a largura */
+}
+
+.navbar li:hover::after {
+    width: 100%; /* Largura total ao passar o mouse */
+}
+
+.banner {
+    width: 100%;
+    height: 500px; /* Defina a altura desejada para o banner */
+    box-sizing: border-box; /* Isso garante que a altura total da div seja incluída, incluindo o preenchimento */
+}
+
+.bannerimg img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover; /* Garante que a imagem cubra todo o espaço da div */
+    object-position:  50%;
+}
+
+.container_games{
+    width: 100%;
+    height: 590px;
+    
+}
+.container_games h1{
+    display: flex;
+    justify-content: center;
+    font-family: 'Metropolis', sans-serif;
+    font-size: bold;
+    font-size: 50px;
+    color: #897859;
+}
+
+.container_games p{
+    display: flex;
+    justify-content: center;
+    font-family: 'Metropolis', sans-serif;
+    font-size: 30px;
+    color: #000000;
+    text-align: center;
+}
+
+  
+.games{
+    width:100% ;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.darksouls1{
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    
+}
+
+.darksouls1 img{
+
+border-radius: 10px;
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.darksouls1 img:hover {
+    transform: scale(1.06); /* Aumenta em 10% quando o mouse passa sobre ele */
+}
+
+.darksouls2{
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+}
+
+.darksouls2 img{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+    }
+
+    .darksouls2 img:hover {
+        transform: scale(1.06); /* Aumenta em 10% quando o mouse passa sobre ele */
+    }
+
+.darksouls3{
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+}
+.darksouls3 img{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+}
+.darksouls3 img:hover {
+    transform: scale(1.06); /* Aumenta em 10% quando o mouse passa sobre ele */
+}
+.venda1{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.venda2{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.venda3{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.social{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #312c21;
+    width: 100%;
+    height: 50px;
+}
+
+.social p{
+    font-weight: bold;
+font-family: 'Metropolis', sans-serif;
+color: #f5f5f5;
+}
+.rs{
+    width:200px ;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lore{
+font-weight: bold;
+font-family: 'Metropolis', sans-serif;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+ border-top: 5px solid #897859;
+ border-bottom: 5px solid #897859;
+ box-sizing: border-box;
+ margin-top:85px ;
+ width: 100%;
+ height: 900px ;   
+ background-image: url(./../assets/lore\ wallpaper.png) ;
+ background-repeat: no-repeat;
+ background-size: cover; /* ou 'contain' dependendo do efeito desejado */
+ background-position: center top; /* Mova a imagem para o centro no topo */
+}
+
+.boxds1{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background-color: #000000b2;
+    width: 450px;
+    height: 450px;
+    border: 2px solid #897859;
+}
+.boxds1 h1{
+    text-align: center;
+    font-family: 'Metropolis', sans-serif;
+    color: #897859;
+}
+.iconbox{
+    padding-top: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.iconbox img{
+    
+    width: 50px;
+}
+.conteudob1 .boxds1{
+    display: flex;
+    justify-items: center;
+    box-sizing: border-box;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.conteudob1 p{
+    font-family: 'Metropolis', sans-serif;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    color: #897859;
+    font-weight: normal;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+}
+
+.boxds2{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background-color: #000000b2;
+    border: 2px solid #897859;
+    width: 450px;
+    height: 450px;
+}
+.boxds2 h1{
+    text-align: center;
+    font-family: 'Metropolis', sans-serif;
+    color: #897859;
+}
+.conteudob2 .boxds2{
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.conteudob2 p{
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    color: #897859;
+    font-weight: normal;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+}
+
+.iconbox2{
+    padding-top: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.iconbox2 img{
+    
+    width: 50px;
+}
+
+.boxds3{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background-color: #000000b2;
+    border: 2px solid #897859;
+    width: 450px;
+    height: 450px;
+}
+.boxds3 h1{
+    text-align: center;
+    font-family: 'Metropolis', sans-serif;
+    color: #897859;
+}
+.conteudob3 .boxds3{
+    display: flexbox;
+    box-sizing: border-box;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.conteudob3 p{
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    color: #897859;
+    font-weight: normal;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+}
+.iconbox3{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.iconbox3 img{
+    
+    width: 50px;
+}
+
+.premiacoes{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 500px;
+    
+}
+
+.box_premios h1 p{
+   display: flex;
+   align-items: center;
+    width: 50%;
+    height: 40%;
+}
+
+.box_premios h1{
+
+    margin: 0;
+}
+.box_premios p{
+    margin: 0;
+}
+
+.premiospng{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px;
+    height: 300px;
+    transition: transform 0.2s ease;
+}
+.premiacoes h1{
+        padding-bottom: 25px;
+        text-align: center;
+        font-size: 50px;
+        font-family: 'Metropolis', sans-serif;
+        color: #897859;
+}
+
+.premiacoes p{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Metropolis', sans-serif;
+    color: #000000;
+}
+
+.premiospng img{
+    width: 147px;
+    height: 141px;
+    transition: transform 0.3s ease;
+}
+
+.premiospng img:hover {
+    transform: scale(1.1); /* Aumenta em 10% quando o mouse passa sobre ele */
+}
+
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader-wrapper img {
+    display: block;
+    margin: auto;
+}
+
+
+
+.soundtrack{ 
+    border-top: solid 6px #897859;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 600px;
+    background-color: #000000;
+}
+
+.musica1{
+ display: flex;
+ align-items: center;
+ overflow: hidden;
+ background-image: url(./../assets/musica1.jpg);
+ height: 100%;   
+ width: 500px;
+ background-color: #000000;
+ background-position: center;
+ background-size: cover;
+ 
+}
+
+.cont_spotify{
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 232px;
+}
+
+.cont_spotify iframe{
+    padding-left: 6px;
+    opacity: 80%;
+}
+.musica2{
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./../assets/musica2.jpg);
+    height: 100%;
+    width: 500px;
+    background-color: #000000;
+    background-position: center;
+    background-size: cover;
+}
+.cont_spotify2{
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 232px;
+}
+
+.cont_spotify2 iframe{
+    opacity: 80%;
+}
+.musica3{
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./../assets/musica3.jpg);
+    height: 100%;   
+    width: 500px;
+    background-color: #000000;
+    background-position: center;
+    background-size: cover;
+}
+.cont_spotify3{
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 232px;
+}
+
+.cont_spotify3 iframe{
+    opacity: 80%;
+}
+.musica4{
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./../assets/musica4.jpg);
+    height: 100%;   
+    width: 500px;
+    background-color: #000000;
+    background-position: center;
+    background-size: cover;
+}
+.cont_spotify4{
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 232px;
+    
+}
+
+.cont_spotify4 iframe{
+    opacity: 80%;
+    
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: solid 5px #312c21;
+    background-color: #000000;
+    width: 100%;
+    height: 150px;
+}
+.footer p{
+    margin: 0;
+    padding-left: 50px;
+    width: 500px;
+    height:60px ;
+    font-family: 'Metropolis', sans-serif;
+    color: #f5f5f5;
+    text-align: left;
+}
+
+.socialfooter{
+    display: flex;
+    align-items: center;
+    width: 250px;
+    height: 150px;
+    padding-right: 50px;
+}
+
+.socialfooter p{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+.footerrs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}

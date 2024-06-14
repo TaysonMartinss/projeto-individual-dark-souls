@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css" integrity="sha512-DJLNx+VLY4aEiEQFjiawXaiceujj5GA7lIY8CHCIGQCBPfsEG0nGz1edb4Jvw1LR7q031zS5PpPqFuPA8ihlRA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.cdnfonts.com/css/metropolis-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/marcellus-sc" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/marcellus" rel="stylesheet">
+    <title>login</title>
+</head>
+<body>
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+        </div>
+    </div>
+
+    
+    
+    <div class="loader-wrapper" id="loader">
+        <img src="./assets/loading.gif" alt="Carregando..." width="200" height="190">
+    </div>
+
+    <video autoplay muted loop id="video-background">
+        <source src="./assets/login2.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo HTML5.
+    </video>
+    
+
+    <div class="loader-wrapper" id="loader">
+        <img src="./assets/loading.gif" alt="Carregando..." width="200" height="190">
+    </div>
+
+    <div class="container">
+    
+    <div class="wall">
+        <img src="./assets/wallpaper login.jpg" alt="">
+    </div>
+    
+    <div class="inputs">
+        <h1>Faça login em sua conta</h1>
+       
+        <span class="email"> 
+        <i class="fa-solid fa-envelope fa-sm" style="color: #897859;"></i>
+        <input type="email" id="email_input" placeholder="e-mail">
+
+        </span>
+
+
+        <span class="senha">
+        <i class="fa-solid fa-lock fa-sm" style="color: #897859;"></i>
+        <input type="password" id="senha_input" placeholder="senha">
+
+        </span>
+
+        <span class="botao">
+        
+        <button onclick="entrar()">
+        entrar <i class="fa-solid fa-right-to-bracket fa-xs" style="color: #f5f5f5;"></i>
+        </button>
+
+        <div id="div_aguardar" class="loading-div">
+            <img style="display: none;" src="./assets/loading.gif" id="loading-gif">
+        </div>
+    
+        <div id="div_erros_login"></div>
+
+        </span>
+
+        <span class="cadon">
+            <p>não tem uma conta ainda?</p>
+            <button id="display_cad"> <a href="cadastro.html" onclick="showLoader()">cadastre-se </a> </button>
+
+        </span>
+
+        <div class="social">
+            <p>FAÇA PARTE DA COMUNIDADE</p>
+            <span class="rs">
+             <a href="https://www.instagram.com/darksoulsgame/"> <i class="fa-brands fa-instagram fa-xl" style="color: #897859;"></i></a>
+             <a href="https://www.youtube.com/@BandaiNamcoEurope"> <i class="fa-brands fa-youtube fa-xl" style="color: #897859;"></i></a>
+             <a href="https://discord.com/invite/darksouls3"> <i class="fa-brands fa-discord fa-xl" style="color: #897859;"></i></a>
+             <a href="https://twitter.com/DarkSoulsGame"><i class="fa-brands fa-twitter fa-xl" style="color: #897859;"></i></a>
+            </span>
+         </div>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+</body>
+</html>
+
+  
+<script>
+
+
+    function entrar() {
+        // aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            // finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+                    setTimeout(function () {
+                        window.location = "dashboard.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
